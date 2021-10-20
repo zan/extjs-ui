@@ -55,7 +55,9 @@ Ext.define('Zan.ui.controller.AppPageController', {
         }
 
         // todo: should be a fired event
-        this._pageContainer.beforeActivate(pageCmp);
+        if (Ext.isFunction(this._pageContainer.beforeActivate)) {
+            this._pageContainer.beforeActivate(pageCmp);
+        }
 
         // If it's in the cache, it just needs to be shown
         if (cachedView) {

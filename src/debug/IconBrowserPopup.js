@@ -2,7 +2,7 @@
  * todo: make this more ext7-like
  */
 Ext.define('Zan.ui.debug.IconBrowserPopup', {
-    extend: 'Zan.panel.ModalPopupDialogPanel',
+    extend: 'Zan.ui.panel.ModalPopupDialogPanel',
 
     title: 'Icon Browser',
 

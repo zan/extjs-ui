@@ -1,5 +1,5 @@
 Ext.define('Zan.ui.debug.DebugRequestLogPopup', {
-    extend: 'Zan.panel.ModalPopupDialogPanel',
+    extend: 'Zan.ui.panel.ModalPopupDialogPanel',
 
     title: 'Request Log',
 
