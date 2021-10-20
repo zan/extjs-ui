@@ -1,5 +1,5 @@
 /**
- * Represents global application state. There is only ever one of these modules and it is available
+ * Represents global application state. There is only ever one of these models and it is available
  * at the top level of the viewport.
  *
  * Some data is persisted to local storage, see the bottom of the file where this state is managed
