@@ -28,18 +28,11 @@ Ext.define('Zan.ui.page.BasePage', {
 
     title: 'Loading...',
 
-    constructor: function (config) {
-        config = Zan.Object.setDefaults(config, {
-            // NOTE: required to support delayed cleanup
-            hideMode: 'offsets',
+    hideMode: 'offsets',
 
-            layout: {
-                type: 'vbox',
-                align: 'stretch',
-            },
-        });
-
-        this.callParent([config]);
+    layout: {
+        type: 'vbox',
+        align: 'stretch',
     },
 
     initComponent: function() {
