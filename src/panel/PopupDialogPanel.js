@@ -1,5 +1,9 @@
 /**
  * todo: clicking 'X' in upper right should also call the cancelFn
+ *
+ * todo: make this more declarative?
+ *
+ * todo: check that popups containing a grid have a width specified. If this is missing, you get "layout run failed"
  */
 Ext.define('Zan.ui.panel.ModalPopupDialogPanel', {
     extend: 'Ext.panel.Panel',
