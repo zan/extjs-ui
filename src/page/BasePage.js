@@ -26,6 +26,8 @@ Ext.define('Zan.ui.page.BasePage', {
         loadRecords: {},
     },
 
+    viewModel: {},
+
     title: 'Loading...',
 
     hideMode: 'offsets',
@@ -57,6 +59,11 @@ Ext.define('Zan.ui.page.BasePage', {
         var session = this.lookupSession();
         var viewModel = this.lookupViewModel();
         var routeParams = this.getZanRouteParameters();
+
+        // Nothing to do if no records were requested
+        if (Ext.Object.isEmpty(this.getLoadRecords())) return;
+
+        if (!session) throw new Error("Page must have a session declared in order to use loadRecords");
 
         Ext.Object.each(this.getLoadRecords(), async function(viewModelName, loadInfo) {
             // todo: better error detection/reporting here
