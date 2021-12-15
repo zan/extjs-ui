@@ -4,6 +4,8 @@
  * todo: make this more declarative?
  *
  * todo: check that popups containing a grid have a width specified. If this is missing, you get "layout run failed"
+ *
+ * todo: rename this file, it doesn't match the class name
  */
 Ext.define('Zan.ui.panel.ModalPopupDialogPanel', {
     extend: 'Ext.panel.Panel',
@@ -75,6 +77,17 @@ Ext.define('Zan.ui.panel.ModalPopupDialogPanel', {
         this.addDocked(this._buildDockedItems());
     },
 
+    /**
+     * Template method to detect whether the popup is in a valid state
+     *
+     * This method is called as part of the "ok" handler and okFn won't be called if this method returns false
+     *
+     * @template
+     */
+    isValid: function() {
+        return true;
+    },
+
     _buildChildComponents: function() {
         var components = [];
 
@@ -100,8 +113,9 @@ Ext.define('Zan.ui.panel.ModalPopupDialogPanel', {
                     text: 'OK',
                     scale: 'medium',
                     handler: function() {
+                        if (!this.isValid()) return;
+
                         var r = this.getOkFn().call(this.getScope() || this, this);
-                        console.log("ok handler returned: %o", r);
                         if (r === false) return;
 
                         this.close();
