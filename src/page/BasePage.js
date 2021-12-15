@@ -24,6 +24,9 @@ Ext.define('Zan.ui.page.BasePage', {
 
         // todo: docs
         loadRecords: {},
+
+        // todo: docs
+        loadPageRecord: null,
     },
 
     viewModel: {},
@@ -49,10 +52,44 @@ Ext.define('Zan.ui.page.BasePage', {
         setTimeout(Ext.bind(function () {
             this._loadRecords();
         }, this), 1);
+
+        setTimeout(Ext.bind(function () {
+            this._loadPageRecord();
+        }, this), 1);
     },
 
     _applyRouteParametersToViewModel() {
         this.lookupViewModel().set('zanRouteParameters', this.getZanRouteParameters());
+    },
+
+    async _loadPageRecord() {
+        var viewModel = this.lookupViewModel();
+        var routeParams = this.getZanRouteParameters();
+
+        if (!viewModel) this.setViewModel(Ext.create('Ext.app.ViewModel'));
+
+        // Nothing to do unless there's a pageRecord configuration
+        if (!this.getLoadPageRecord()) return;
+
+        var loadPageRecord = this.getLoadPageRecord();
+        var identifier = routeParams[loadPageRecord.identifierParam];
+
+        var params = {
+            identifier: identifier,
+        };
+
+        // Support additional responseFields from the API
+        if (!Ext.isEmpty(loadPageRecord.responseFields)) {
+            params.responseFields = loadPageRecord.responseFields;
+        }
+
+        var record = Ext.create(loadPageRecord.type);
+        record.load({
+            params: params,
+            success: function(record, op) {
+                viewModel.set('pageRecord', record);
+            }
+        });
     },
 
     async _loadRecords() {
