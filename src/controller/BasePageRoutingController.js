@@ -1,3 +1,6 @@
+/**
+ * todo: no longer necessary after refactor to PageContainerView and PageContainerViewController?
+ */
 Ext.define('Zan.ui.controller.BasePageRoutingController', {
     extend: 'Ext.app.Controller',
 

@@ -1,5 +1,7 @@
 /**
  * todo: set some limits on delayed cleanup pages, eg. # of them or time without access
+ *
+ * todo: no longer necessary after refactor to PageContainerView and PageContainerViewController?
  */
 Ext.define('Zan.ui.controller.AppPageController', {
     extend: 'Ext.app.Controller',

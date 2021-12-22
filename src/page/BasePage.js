@@ -33,6 +33,8 @@ Ext.define('Zan.ui.page.BasePage', {
 
     title: 'Loading...',
 
+    // This preserves the page's layout if it's a delayedCleanup page
+    // The routing system will hide the page until it should be shown again
     hideMode: 'offsets',
 
     layout: {

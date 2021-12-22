@@ -3,6 +3,8 @@
  *
  *  - Adds support for a query string on each URL
  *  - Makes it easy to link to Pages
+ *
+ * todo: no longer necessary after refactor to PageContainerView and PageContainerViewController?
  */
 Ext.define('Zan.ui.RoutingHelper', {
     singleton: true,

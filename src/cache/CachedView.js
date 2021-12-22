@@ -1,3 +1,6 @@
+/**
+ * todo: is this class necessary?
+ */
 Ext.define('Zan.ui.cache.CachedView', {
     config: {
         view: null,
