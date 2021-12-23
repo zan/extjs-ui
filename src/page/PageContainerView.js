@@ -5,13 +5,15 @@ Ext.define('Zan.ui.page.PageContainerView', {
         'Zan.ui.page.PageContainerViewController'
     ],
 
-    controller: { xclass: 'Zan.ui.page.PageContainerViewController' },
-    viewModel: {},
-
     config: {
         // todo: docs
         zanPageRoutes: null,
     },
+
+    controller: { xclass: 'Zan.ui.page.PageContainerViewController' },
+    viewModel: {},
+
+    layout: 'fit',
 
     updateZanPageRoutes: function(zanPageRoutes) {
         // If zanPageRoutes is specified declaratively the properties may actually be on the object's prototype
