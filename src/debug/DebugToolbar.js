@@ -4,11 +4,6 @@
 Ext.define('Zan.ui.debug.DebugToolbar', {
     extend: 'Ext.toolbar.Toolbar',
 
-    border: 1,
-    style: {
-        borderColor: 'red',
-    },
-
     items: [
         {
             xtype: 'button',
@@ -22,7 +17,7 @@ Ext.define('Zan.ui.debug.DebugToolbar', {
                             Ext.create('Zan.ui.debug.IconBrowserPopup', { autoShow: true });
                         }
                     },
-                    { text: 'API Viewer', iconCls: 'x-fab fa-symfony', href: '#/zan/data/api-viewer' },
+                    { text: 'API Viewer', iconCls: 'x-fab fa-symfony', href: '#/zan/data/api-viewer', hrefTarget: '_blank' },
                 ]
             }
         },
