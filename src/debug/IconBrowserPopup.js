@@ -4,6 +4,10 @@
 Ext.define('Zan.ui.debug.IconBrowserPopup', {
     extend: 'Zan.ui.panel.ModalPopupDialogPanel',
 
+    requires: [
+        'Zan.common.String',
+    ],
+
     title: 'Icon Browser',
 
     showCancelButton: false,
@@ -20,6 +24,7 @@ Ext.define('Zan.ui.debug.IconBrowserPopup', {
             width: 400,
             height: 400,
             itemId: 'iconGrid',
+            plugins: ['gridfilters'],
             columns: [
                 { text: 'Icon', dataIndex: 'iconClassName',
                     renderer(value, metaData, record, rowIndex, colIndex, store, view) {
@@ -33,7 +38,9 @@ Ext.define('Zan.ui.debug.IconBrowserPopup', {
                         return html.join("");
                     }
                 },
-                { text: 'Icon Name', dataIndex: 'iconName', flex: 1, },
+                { text: 'Icon Name', dataIndex: 'iconName', flex: 1,
+                    filter: { type: 'string' }
+                },
             ]
         },
     ],
@@ -57,7 +64,7 @@ Ext.define('Zan.ui.debug.IconBrowserPopup', {
                 // remove ::before and everything after it
                 var iconName = cssRule.cssText.substring(0, cssRule.cssText.indexOf(":"));
                 // remove .fa-
-                iconName = Zan.String.removePrefix(iconName, '.fa-');
+                iconName = Zan.common.String.removePrefix(iconName, '.fa-');
 
                 data.push({
                     iconClassName: 'fa-' + iconName,
