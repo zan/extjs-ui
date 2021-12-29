@@ -26,6 +26,7 @@ Ext.define('Zan.ui.page.BasePage', {
         loadRecords: {},
 
         // todo: docs
+        // todo: can this be replaced with "Model Links"? https://docs.sencha.com/extjs/7.5.0/classic/Ext.app.ViewModel.html
         loadPageRecord: null,
     },
 
@@ -76,9 +77,9 @@ Ext.define('Zan.ui.page.BasePage', {
         var loadPageRecord = this.getLoadPageRecord();
         var identifier = routeParams[loadPageRecord.identifierParam];
 
-        var params = {
-            identifier: identifier,
-        };
+        // Merge identifier into additional parameters
+        var params = Ext.Object.isEmpty(loadPageRecord.params) ? {} : loadPageRecord.params;
+        params.identifier = identifier;
 
         // Support additional responseFields from the API
         if (!Ext.isEmpty(loadPageRecord.responseFields)) {
