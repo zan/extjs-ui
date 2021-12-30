@@ -136,6 +136,7 @@ Ext.define('Zan.ui.page.PageContainerViewController', {
             };
 
             pageCmp = Ext.create(className, pageConfig);
+            //pageCmp.getViewModel().set('zanRouteParams', routeParams);
         }
 
         // Verify that pageCmp is a valid page
