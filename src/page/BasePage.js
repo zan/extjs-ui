@@ -76,10 +76,17 @@ Ext.define('Zan.ui.page.BasePage', {
         if (!this.getLoadPageRecord()) return;
 
         var loadPageRecord = this.getLoadPageRecord();
-        var identifier = routeParams[loadPageRecord.identifierParam];
+        var identifier = loadPageRecord.identifier;
+        if (loadPageRecord.identifierParam) {
+            identifier = routeParams[loadPageRecord.identifierParam];
+        }
 
         // Merge identifier into additional parameters
-        var params = Ext.Object.isEmpty(loadPageRecord.params.__proto__) ? {} : loadPageRecord.params.__proto__;
+        var params = {};
+        if (loadPageRecord.hasOwnProperty('params')) {
+            params = loadPageRecord.params.__proto__;
+        }
+
         params.identifier = identifier;
 
         // Support additional responseFields from the API
