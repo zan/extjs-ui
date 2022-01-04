@@ -44,7 +44,7 @@ Ext.define('Zan.ui.page.ApiViewerPage', {
                             displayField: 'name',
                             editable: false,
                             bind: {
-                                value: '{zanRouteParameters.requestMethod}',
+                                value: '{zanRouteParams.requestMethod}',
                             },
                         },
                         {
@@ -52,7 +52,7 @@ Ext.define('Zan.ui.page.ApiViewerPage', {
                             name: 'url',
                             value: '/zan/doctrine/entity/App.Entity.StowersUser/test1',
                             bind: {
-                                value: '{zanRouteParameters.requestUrl}',
+                                value: '{zanRouteParams.requestUrl}',
                             },
                             flex: 1
                         },
@@ -63,7 +63,7 @@ Ext.define('Zan.ui.page.ApiViewerPage', {
                     fieldLabel: 'Parameters',
                     name: 'paramsText',
                     bind: {
-                        value: '{zanRouteParameters.requestData}',
+                        value: '{zanRouteParams.requestData}',
                     },
                 },
                 {

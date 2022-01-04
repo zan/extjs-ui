@@ -49,7 +49,7 @@ Ext.define('Zan.ui.controller.AppPageController', {
         }
         else {
             var pageConfig = {
-                zanRouteParameters: routeParams,
+                zanRouteParams: routeParams,
                 flex: 1,
             };
 
