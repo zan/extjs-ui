@@ -2,7 +2,8 @@ Ext.define('Zan.ui.view.workflow.WorkflowProgressIndicator', {
     extend: 'Ext.panel.Panel',
 
     requires: [
-        'Zan.data.model.WorkflowModel',
+        // todo: sencha app build fails if this is required from here
+        //'Zan.data.model.WorkflowModel',
     ],
 
     config: {

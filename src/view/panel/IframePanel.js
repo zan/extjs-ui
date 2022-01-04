@@ -6,7 +6,7 @@
  * See: https://docs.sencha.com/extjs/7.3.1/classic/src/IFrame.js.html
  *      https://docs.sencha.com/extjs/7.3.1/classic/Ext.ux.IFrame.html
  */
-Ext.define('Zan.ui.panel.IframePanel', {
+Ext.define('Zan.ui.view.panel.IframePanel', {
     extend: 'Ext.Component',
 
     alias: 'widget.zan-iframe',

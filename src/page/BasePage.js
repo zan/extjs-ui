@@ -1,7 +1,7 @@
 Ext.define('Zan.ui.page.BasePage', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'Zan.data.ViewModel',
+        'Zan.ui.ViewModel',
     ],
 
     alias: 'widget.zan-page',
@@ -27,7 +27,7 @@ Ext.define('Zan.ui.page.BasePage', {
     },
 
     viewModel: {
-        xclass: 'Zan.data.ViewModel',
+        xclass: 'Zan.ui.ViewModel',
     },
 
     title: 'Loading...',
