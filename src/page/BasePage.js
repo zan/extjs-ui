@@ -41,6 +41,10 @@ Ext.define('Zan.ui.page.BasePage', {
         align: 'stretch',
     },
 
+    // Allow this to be a container that holds references to items even if there is no controller
+    // https://docs.sencha.com/extjs/7.5.0/classic/Ext.panel.Panel.html#cfg-referenceHolder
+    referenceHolder: true,
+
     initComponent: function() {
         this.callParent();
 
