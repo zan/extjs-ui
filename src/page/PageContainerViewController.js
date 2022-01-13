@@ -108,7 +108,6 @@ Ext.define('Zan.ui.page.PageContainerViewController', {
                 this._lastActivePage.hide();
             }
             else {
-                console.log("destroying: %o", this._lastActivePage);
                 this.lookup('zanPageContainer').remove(this._lastActivePage);
             }
         }
