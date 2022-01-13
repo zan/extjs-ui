@@ -32,6 +32,13 @@ Ext.define('Zan.ui.debug.DebugToolbar', {
                 appState.save();
             }
         },
+        {
+            xtype: 'displayfield',
+            bind: {
+                // Zan.ui.model.ZanAppStateModel
+                value: '{zanAppState.activePageClassName}',
+            }
+        },
         '->',
         {
             xtype: 'button',
