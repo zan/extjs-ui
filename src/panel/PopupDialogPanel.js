@@ -43,6 +43,9 @@ Ext.define('Zan.ui.panel.ModalPopupDialogPanel', {
         scope: null,
     },
 
+    // Allow tracking references
+    referenceHolder: true,
+
     // Set defaults for parent class
     floating: true,
     closable: true,
