@@ -11,6 +11,10 @@ Ext.define('Zan.ui.debug.DebugRequestLogPopup', {
         {
             xtype: 'grid',
             store: 'Zan.data.DebugRequestLogStore',
+            viewConfig: {
+                // Turn this off since we don't care if the RestRequestModel is dirty
+                markDirty: false,
+            },
             columns: [
                 { text: 'Time', dataIndex: 'responseAt', xtype: 'datecolumn', format: 'h:i:sa' },
                 { text: 'Method', dataIndex: 'method' },
