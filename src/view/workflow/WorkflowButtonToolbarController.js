@@ -15,11 +15,24 @@ Ext.define('Zan.ui.view.workflow.WorkflowButtonToolbarController', {
         this.getView().removeAll();
 
         var items = [];
-        Ext.Array.forEach(workflow.get('enabledTransitions'), function(item) {
+        Ext.Array.forEach(workflow.get('validGraphTransitions'), function(item) {
+            var disabled = false;
+            var tooltip = null;
+            if (item.blockers) {
+                disabled = true;
+                tooltip = [];
+                Ext.Array.forEach(item.blockers, function(raw) {
+                    tooltip.push('<span class="x-fa fa-exclamation-triangle"></span> ' + Ext.htmlEncode(raw.message));
+                });
+                tooltip = tooltip.join("<br>");
+            }
+
             items.push({
                 xtype: 'button',
                 text: item.name,
                 margin: '0 5 0 5',
+                disabled: disabled,
+                tooltip: tooltip,
                 handler: function(button) {
                     this.doTransition(button.getText());
                 },
