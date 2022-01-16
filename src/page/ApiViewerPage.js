@@ -6,8 +6,7 @@ Ext.define('Zan.ui.page.ApiViewerPage', {
         'Zan.ui.view.panel.IframePanel',
     ],
 
-    // todo: way to specify class here?
-    controller: 'zan-data-ApiViewerPageController',
+    controller: { xclass: 'Zan.ui.page.ApiViewerPageController' },
 
     title: 'API Viewer',
 
@@ -73,6 +72,7 @@ Ext.define('Zan.ui.page.ApiViewerPage', {
                     items: [
                         {
                             xtype: 'button',
+                            reference: 'doRequestButton',
                             text: 'Request',
                             scale: 'medium',
                             handler: 'onDoRequest',

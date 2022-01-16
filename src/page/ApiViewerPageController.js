@@ -20,7 +20,15 @@ Ext.define('Zan.ui.page.ApiViewerPageController', {
             postData = JSON.parse(formValues.paramsText);
         }
 
+        var doRequestButton = this.lookup('doRequestButton');
+        var oldText = doRequestButton.getText();
+        doRequestButton.setText('Requesting...');
+        doRequestButton.disable();
+
         var result = await Zan.data.Api.makeRequest(url, formValues.method, postData);
+
+        doRequestButton.setText(oldText);
+        doRequestButton.enable();
 
         if (result.sfProfilerUrl) {
             this.lookupReference('sfProfilerIframe').load(result.sfProfilerUrl);
