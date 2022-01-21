@@ -18,6 +18,7 @@ Ext.define('Zan.ui.debug.DebugToolbar', {
                         }
                     },
                     { text: 'API Viewer', iconCls: 'x-fab fa-symfony', href: '#/zan/data/api-viewer', hrefTarget: '_blank' },
+                    { text: 'DQL Console', iconCls: 'x-fa fa-database', href: '#/zan/data/dql-console', hrefTarget: '_blank' },
                 ]
             }
         },
