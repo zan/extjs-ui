@@ -6,6 +6,8 @@
  * todo: check that popups containing a grid have a width specified. If this is missing, you get "layout run failed"
  *
  * todo: rename this file, it doesn't match the class name
+ *
+ * todo: rename okFn and cancelFn to handler and cancelHandler to be more ext-like?
  */
 Ext.define('Zan.ui.panel.ModalPopupDialogPanel', {
     extend: 'Ext.panel.Panel',
